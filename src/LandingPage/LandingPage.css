@@ -1,0 +1,135 @@
+/* Ensure no horizontal overflow */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* Background and layout */
+  .landing-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/landingPhoto.webp'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+    padding-left: 50px; /* Adjust this padding as needed */
+    box-sizing: border-box;
+  }
+  
+  /* Dark overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+  }
+  
+  /* Content wrapper to center vertically and align left */
+  .content {
+    z-index: 2;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  /* Typing animation for text */
+  .typing-animation {
+    color: white;
+    font-size: 4rem;
+    font-family: "Roboto Mono", monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white; /* Caret */
+    width: 22ch; /* Adjust this to match text length */
+    animation: typing 2s steps(22, end) forwards;
+    text-align: left; /* Align text to the left */
+    margin: 0;
+  }
+  
+  /* Quote styling */
+  .quote {
+    color: #ccc; /* Less attention-grabbing color */
+    font-size: 1.3rem;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s forwards; /* Fade in effect */
+  }
+  
+  /* Author styling */
+  .author {
+    color: #ccc; /* Less attention-grabbing color */
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    margin-top: 10px;
+    font-style: italic;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s forwards; /* Fade in effect */
+    animation-delay: 1s; /* Delay to match the quote */
+    position: relative;
+    left: 500px;
+  }
+  
+  /* Link styling */
+  .project-link {
+    position: absolute;
+    bottom: -100px; /* Just below the quote */
+    left: 650px; /* Adjust this to position it right under the quote */
+    display: flex;
+    align-items: center;
+    color: #fff; /* Text color */
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    background-color: #F38601; /* Background color for the link */
+    padding: 10px 20px;
+    border-radius: 50px;
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slideIn 1s forwards; /* Animation to slide in from left */
+    overflow: hidden; /* To handle animation overflow */
+    width: max-content;
+  }
+  
+  /* Arrow styling */
+  .arrow {
+    font-size: 1.5rem;
+    color: #fff; /* Arrow color */
+    margin-right: 10px; /* Space between arrow and text */
+  }
+  
+  /* Link text styling */
+  .link-text {
+    position: relative;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  }
+  
+  /* Hover effects for link */
+  /* .project-link:hover .link-text {
+    background-color: #F38601; 
+    color: #fff; 
+  } */
+  
+  /* Keyframes for typing effect */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 22ch; } /* Keeps the text visible after typing */
+  }
+  
+  /* Keyframes for fading in quote */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Keyframes for sliding in link */
+  @keyframes slideIn {
+    from { transform: translateX(-30%); }
+    to { transform: translateX(0); }
+  }
