@@ -9,12 +9,12 @@ const LandingPage = () => {
     // Set a timeout to show the quote after the typing animation ends (3 seconds)
     const timer = setTimeout(() => {
       setShowQuote(true);
-    }, 2000); // Match this duration with the animation duration
+    }); // Match this duration with the animation duration
 
     // Set a timeout to show the link after the quote and author animations end (5 seconds)
     const linkTimer = setTimeout(() => {
       setShowLink(true);
-    }, 4000); // Duration for quote and author animation plus additional delay
+    }, 1000); // Duration for quote and author animation plus additional delay
 
     return () => {
       clearTimeout(timer);
